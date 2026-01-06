@@ -1,0 +1,514 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>אלון | קורס בגרות בגיאוגרפיה (Udemy)</title>
+  <meta name="description" content="קורס בגרות בגיאוגרפיה עם סרטונים קצרים וממוקדים, מאגר חומרים מקיף, הסברים לאטלס ושאלות בגרות בסוף כל פרק.">
+  <meta name="theme-color" content="#0b1220" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="קורס בגרות בגיאוגרפיה | אלון" />
+  <meta property="og:description" content="לומדים בקלות ובמהירות: סרטונים קצרים, מאגר חומרים מקיף, אטלס ושאלות בגרות לכל פרק." />
+  <meta property="og:type" content="website" />
+  <!-- אם תרצה תמונת שיתוף: העלה תמונה ושנה את הנתיב -->
+  <meta property="og:image" content="og-image.png" />
+
+  <!-- Fonts (optional) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg: #070b16;
+      --card: rgba(255,255,255,.06);
+      --card2: rgba(255,255,255,.09);
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.70);
+      --muted2: rgba(255,255,255,.55);
+      --stroke: rgba(255,255,255,.14);
+      --accent: #6ee7ff;
+      --accent2:#a78bfa;
+      --good:#34d399;
+      --warn:#fbbf24;
+      --shadow: 0 18px 55px rgba(0,0,0,.45);
+      --radius: 18px;
+      --radius2: 28px;
+      --max: 1080px;
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: "Heebo", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background:
+        radial-gradient(1200px 700px at 20% -10%, rgba(110,231,255,.22), transparent 60%),
+        radial-gradient(900px 600px at 90% 10%, rgba(167,139,250,.20), transparent 55%),
+        radial-gradient(1100px 900px at 50% 120%, rgba(52,211,153,.12), transparent 55%),
+        var(--bg);
+      color:var(--text);
+      overflow-x:hidden;
+    }
+
+    a{ color:inherit; text-decoration:none; }
+    .wrap{ width:min(var(--max), calc(100% - 40px)); margin-inline:auto; }
+    .nav{
+      position:sticky; top:0; z-index:30;
+      backdrop-filter: blur(14px);
+      background: linear-gradient(to bottom, rgba(7,11,22,.70), rgba(7,11,22,.25));
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .nav-inner{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 0;
+      gap:14px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px;
+      font-weight:800;
+      letter-spacing:.2px;
+    }
+    .logo{
+      width:38px; height:38px; border-radius:14px;
+      background:
+        linear-gradient(135deg, rgba(110,231,255,.9), rgba(167,139,250,.85));
+      box-shadow: 0 12px 30px rgba(110,231,255,.18);
+      position:relative;
+      border:1px solid rgba(255,255,255,.20);
+    }
+    .logo::after{
+      content:"";
+      position:absolute; inset:9px;
+      border-radius:12px;
+      border:1px dashed rgba(7,11,22,.55);
+      opacity:.7;
+    }
+
+    .nav-links{
+      display:flex; gap:18px; align-items:center;
+      color:var(--muted);
+      font-weight:500;
+      font-size:14px;
+    }
+    .nav-links a{ padding:8px 10px; border-radius:12px; }
+    .nav-links a:hover{ background: rgba(255,255,255,.06); color: var(--text); }
+
+    .cta{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:12px 14px;
+      border-radius: 14px;
+      border:1px solid rgba(255,255,255,.18);
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+      font-weight:700;
+      gap:10px;
+      transition: transform .18s ease, background .18s ease, border-color .18s ease;
+      box-shadow: 0 10px 30px rgba(0,0,0,.22);
+      white-space:nowrap;
+    }
+    .cta:hover{
+      transform: translateY(-1px);
+      background: rgba(255,255,255,.10);
+      border-color: rgba(255,255,255,.28);
+    }
+    .cta.primary{
+      background: linear-gradient(135deg, rgba(110,231,255,.95), rgba(167,139,250,.90));
+      border: 1px solid rgba(255,255,255,.32);
+      color: #08101f;
+      box-shadow: 0 18px 55px rgba(110,231,255,.18);
+    }
+    .cta.primary:hover{ transform: translateY(-2px) scale(1.01); }
+
+    .hero{
+      padding: 56px 0 28px;
+      position:relative;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 28px;
+      align-items:stretch;
+    }
+    @media (max-width: 920px){
+      .hero-grid{ grid-template-columns: 1fr; }
+      .nav-links{ display:none; }
+    }
+
+    .headline{
+      font-size: clamp(28px, 4.2vw, 44px);
+      line-height:1.05;
+      margin: 0 0 14px;
+      font-weight: 900;
+    }
+    .sub{
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.6;
+      max-width: 60ch;
+    }
+
+    .pill-row{ display:flex; flex-wrap:wrap; gap:10px; margin: 14px 0 22px; }
+    .pill{
+      padding: 8px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.14);
+      color: var(--muted);
+      font-size: 13px;
+      display:inline-flex; align-items:center; gap:8px;
+    }
+    .dot{ width:8px; height:8px; border-radius:999px; background: var(--good); box-shadow: 0 0 0 5px rgba(52,211,153,.12); }
+
+    .hero-actions{ display:flex; flex-wrap:wrap; gap:12px; margin-top: 18px; }
+    .small-note{ margin-top:10px; color: var(--muted2); font-size:13px; }
+
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.04));
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: var(--radius2);
+      box-shadow: var(--shadow);
+    }
+    .card.pad{ padding: 18px; }
+
+    .profile{
+      display:flex; gap:14px; align-items:flex-start;
+      padding:18px;
+    }
+    .avatar{
+      width:58px; height:58px; border-radius:20px;
+      background: linear-gradient(135deg, rgba(110,231,255,.35), rgba(167,139,250,.35));
+      border: 1px solid rgba(255,255,255,.18);
+      position:relative;
+      flex:0 0 auto;
+    }
+    .avatar::after{
+      content:"";
+      position:absolute; inset:10px;
+      border-radius:16px;
+      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.22), transparent 60%);
+    }
+    .profile h3{ margin: 0 0 6px; font-size: 18px; }
+    .profile p{ margin:0; color: var(--muted); line-height:1.6; }
+
+    .stats{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      padding: 0 18px 18px;
+    }
+    .stat{
+      border-radius: 16px;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.10);
+      padding: 12px;
+      min-height: 78px;
+    }
+    .stat b{ display:block; font-size: 18px; margin-bottom: 4px; }
+    .stat span{ color: var(--muted2); font-size: 13px; line-height:1.35; }
+
+    section{ padding: 34px 0; }
+    .section-title{
+      font-size: 22px;
+      margin:0 0 14px;
+      font-weight: 900;
+      letter-spacing:.2px;
+    }
+    .section-sub{
+      margin:0 0 18px;
+      color: var(--muted);
+      line-height:1.7;
+    }
+
+    .grid-3{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+    @media (max-width: 920px){
+      .grid-3{ grid-template-columns: 1fr; }
+    }
+
+    .feature{
+      padding: 16px;
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.12);
+      min-height: 132px;
+    }
+    .feature h4{ margin: 0 0 8px; font-size:16px; }
+    .feature p{ margin:0; color: var(--muted); line-height:1.65; }
+
+    .badge{
+      display:inline-flex; align-items:center; gap:8px;
+      font-size: 12px;
+      color: rgba(7,11,22,.92);
+      background: rgba(255,255,255,.82);
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-weight: 800;
+    }
+
+    .faq{ display:grid; gap:10px; }
+    details{
+      border-radius: 16px;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.12);
+      padding: 12px 14px;
+    }
+    summary{
+      cursor:pointer;
+      font-weight: 800;
+      list-style:none;
+    }
+    summary::-webkit-details-marker{ display:none; }
+    details p{
+      margin: 10px 0 0;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .final-cta{
+      padding: 22px;
+      border-radius: var(--radius2);
+      border: 1px solid rgba(255,255,255,.16);
+      background:
+        radial-gradient(900px 450px at 10% 10%, rgba(110,231,255,.22), transparent 60%),
+        radial-gradient(700px 420px at 90% 30%, rgba(167,139,250,.20), transparent 55%),
+        rgba(255,255,255,.04);
+      box-shadow: var(--shadow);
+      display:flex;
+      gap:14px;
+      align-items:center;
+      justify-content:space-between;
+      flex-wrap:wrap;
+    }
+    .final-cta h3{ margin:0; font-size: 20px; font-weight: 900; }
+    .final-cta p{ margin:6px 0 0; color: var(--muted); }
+
+    footer{
+      padding: 26px 0 40px;
+      color: var(--muted2);
+      font-size: 13px;
+      border-top: 1px solid rgba(255,255,255,.08);
+      margin-top: 22px;
+    }
+
+    .kbd{
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 12px;
+      color: rgba(255,255,255,.82);
+      border: 1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.06);
+      padding: 3px 8px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="nav">
+    <div class="wrap nav-inner" aria-label="ניווט עליון">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <div style="font-size:14px; color:var(--muted); font-weight:700;">קורס בגרות בגיאוגרפיה</div>
+          <div style="font-size:13px; color:var(--muted2); font-weight:500;">אלון • Udemy</div>
+        </div>
+      </div>
+
+      <nav class="nav-links" aria-label="קישורים">
+        <a href="#about">עליי</a>
+        <a href="#course">מה מקבלים</a>
+        <a href="#faq">שאלות נפוצות</a>
+      </nav>
+
+      <a class="cta" href="https://www.udemy.com/course/swljqwxk/?referralCode=2C9C8ECD2A2F9BBD9CE4" target="_blank" rel="noopener">
+        לצפייה בקורס
+        <span aria-hidden="true">↗</span>
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="pill-row" aria-label="תגיות עיקריות">
+            <span class="pill"><span class="dot" aria-hidden="true"></span>מתאים לתיכון ולמשלימי בגרויות</span>
+            <span class="pill">סרטונים קצרים וממוקדים</span>
+            <span class="pill">שאלות בגרות בסוף כל פרק</span>
+          </div>
+
+          <h1 class="headline">להצליח בבגרות בגיאוגרפיה —<br>בקלות, במהירות ובביטחון.</h1>
+          <p class="sub">
+            קורס דיגיטלי שמרכז את כל מה שצריך לבגרות העדכנית:
+            מאגר חומרים מקיף ובלעדי, הסברים ברורים, עבודה נכונה עם אטלס,
+            ובסוף כל פרק — שאלות בגרות שנבחרו במיוחד כדי לתרגל בדיוק את מה שמופיע במבחן.
+          </p>
+
+          <div class="hero-actions">
+            <a class="cta primary" href="https://www.udemy.com/course/swljqwxk/?referralCode=2C9C8ECD2A2F9BBD9CE4" target="_blank" rel="noopener">
+              להתחיל עכשיו ב-Udemy
+              <span aria-hidden="true">🚀</span>
+            </a>
+            <a class="cta" href="#course">
+              לראות מה כלול בקורס
+              <span aria-hidden="true">↓</span>
+            </a>
+          </div>
+
+          <div class="small-note">
+            טיפ: שומרים את האתר במועדפים ומגיעים לקורס בלחיצה אחת.
+          </div>
+        </div>
+
+        <aside class="card" aria-label="כרטיס היכרות">
+          <div class="profile" id="about">
+            <div class="avatar" aria-hidden="true"></div>
+            <div>
+              <span class="badge">מרצה • גיאוגרפיה</span>
+              <h3>היי אני אלון</h3>
+              <p>
+                בוגר תואר ראשון בגיאוגרפיה מאוניברסיטת בן גוריון, כיום אני עובד בחברה בתחום הקיימות.
+                <br><br>
+                בשנים האחרונות לימדתי מאות תלמידי תיכון ומשלימי בגרויות כיצד לצלוח את הבגרות בגיאוגרפיה בקלות ובמהירות.
+                <br><br>
+                מתוך הניסיון הזה, יצרתי מאגר חומרים מקיף ובלעדי, המותאם במיוחד לדרישות בחינת הבגרות העדכנית.
+                במסגרת הקורס, תיהנו מגישה ישירה לחומרים אלו, הכוללים סרטונים קצרים וממוקדים לכל פרק.
+                יש גם הסברים לשימוש באטלס.
+                בסוף כל פרק יופיעו שאלות בגרות שריכזתי עבורכם.
+              </p>
+            </div>
+          </div>
+
+          <div class="stats" aria-label="הדגשים מהירים">
+            <div class="stat">
+              <b>ממוקד</b>
+              <span>בלי מריחות — בדיוק מה שצריך לבגרות</span>
+            </div>
+            <div class="stat">
+              <b>מעשי</b>
+              <span>שאלות בגרות לכל פרק + תרגול חכם</span>
+            </div>
+            <div class="stat">
+              <b>מסודר</b>
+              <span>מאגר חומרים מותאם לדרישות העדכניות</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="course">
+      <div class="wrap">
+        <h2 class="section-title">מה תקבלו בקורס?</h2>
+        <p class="section-sub">
+          תכל׳ס — המטרה היא להגיע למבחן כשאתם יודעים מה עושים, מה כותבים, ואיך מוציאים את הנקודות.
+        </p>
+
+        <div class="grid-3" role="list">
+          <div class="feature" role="listitem">
+            <h4>סרטונים קצרים וממוקדים</h4>
+            <p>כל פרק מוסבר בצורה ברורה, עם דגש על מה שבאמת נשאל בבגרות.</p>
+          </div>
+          <div class="feature" role="listitem">
+            <h4>מאגר חומרים מקיף ובלעדי</h4>
+            <p>חומרים מסודרים לפי פרקים — מותאמים לדרישות בחינת הבגרות העדכנית.</p>
+          </div>
+          <div class="feature" role="listitem">
+            <h4>הסברים לשימוש באטלס</h4>
+            <p>איך מחפשים נכון, איך מוצאים מידע מהר, ואיך משתמשים בו כדי לענות כמו שצריך.</p>
+          </div>
+          <div class="feature" role="listitem">
+            <h4>שאלות בגרות בסוף כל פרק</h4>
+            <p>תרגול ממוקד שמחבר בין התיאוריה לשאלות האמיתיות של הבחינה.</p>
+          </div>
+          <div class="feature" role="listitem">
+            <h4>מתאים גם למשלימי בגרויות</h4>
+            <p>הכול בנוי בצורה מסודרת — גם אם לא למדתם תקופה, אפשר להיכנס לקצב מהר.</p>
+          </div>
+          <div class="feature" role="listitem">
+            <h4>לומדים בקצב שלכם</h4>
+            <p>אפשר לעצור, לחזור, ולהתקדם מתי שנוח — בבית או בדרך.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="wrap">
+        <h2 class="section-title">שאלות נפוצות</h2>
+        <p class="section-sub">אם תרצה, אוסיף כאן גם תשובות מדויקות לפי מבנה הקורס שלך ב-Udemy.</p>
+
+        <div class="faq">
+          <details>
+            <summary>למי הקורס מתאים?</summary>
+            <p>לתלמידי תיכון, למשלימי בגרויות, ולכל מי שרוצה סדר ובהירות לקראת הבגרות בגיאוגרפיה.</p>
+          </details>
+
+          <details>
+            <summary>מה היתרון של סרטונים קצרים?</summary>
+            <p>קל ללמוד בלי להתעייף, לחזור בדיוק לנקודה שרוצים, ולהתקדם מהר בלי לבזבז זמן.</p>
+          </details>
+
+          <details>
+            <summary>האם יש תרגול?</summary>
+            <p>כן. בסוף כל פרק יש שאלות בגרות שרוכזו במיוחד כדי לתרגל את החומר בצורה מדויקת.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="final-cta">
+          <div>
+            <h3>מוכנים להתחיל?</h3>
+            <p>לחיצה אחת ואתם בקורס. מומלץ לפתוח כבר עכשיו ולהתחיל מפרק 1.</p>
+          </div>
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            <a class="cta primary" href="https://www.udemy.com/course/swljqwxk/?referralCode=2C9C8ECD2A2F9BBD9CE4" target="_blank" rel="noopener">
+              לקורס ב-Udemy
+              <span aria-hidden="true">↗</span>
+            </a>
+            <a class="cta" href="#about">
+              מי אני?
+              <span aria-hidden="true">👋</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="wrap">
+        <div style="display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;">
+          <div>© <span id="year"></span> אלון • כל הזכויות שמורות</div>
+          <div>טיפ לאתר מהיר: העלאה ל-GitHub Pages / Netlify. (<span class="kbd">index.html</span>)</div>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    // year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Smooth scroll for internal anchors
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener("click", (e) => {
+        const id = a.getAttribute("href");
+        const el = document.querySelector(id);
+        if(!el) return;
+        e.preventDefault();
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+        history.replaceState(null, "", id);
+      });
+    });
+  </script>
+</body>
+</html>
